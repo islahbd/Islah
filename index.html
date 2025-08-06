@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>মাওলানা শাহ্‌ তৈয়্যেব আশরাফ - বয়ান সিডিউল</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
   
   <style>
@@ -169,7 +170,7 @@
       gap: 10px;
     }
     
-    .link-left img {
+    .link-left lord-icon {
       width: 26px;
       height: 26px;
     }
@@ -529,6 +530,163 @@
         font-size: 20px;
       }
     }
+
+
+
+    /* আজকের বয়ান বাটন */
+.today-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  transition: all 0.3s;
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.today-btn:hover {
+  background: #2ecc71;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* পপআপ স্টাইল */
+.today-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+/* ইভেন্ট কার্ড স্টাইল */
+.event-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #27ae60;
+}
+
+.event-title {
+  color: #2c3e50;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-detail-row {
+  display: flex;
+  margin: 8px 0;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  width: 24px;
+  text-align: center;
+  color: #3498db;
+  margin-right: 10px;
+}
+
+.detail-label {
+  font-weight: bold;
+  min-width: 80px;
+  color: #7f8c8d;
+}
+
+.detail-value {
+  flex: 1;
+  color: #34495e;
+}
+
+.no-bayan {
+  text-align: center;
+  color: #e74c3c;
+  padding: 20px;
+  font-size: 18px;
+}
+
+/* রেস্পন্সিভ স্টাইল */
+@media (max-width: 600px) {
+  .popup-content {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .event-detail-row {
+    flex-direction: column;
+  }
+  
+  .detail-label {
+    margin-bottom: 3px;
+  }
+}
+
+
+.event-card {
+  position: relative;
+}
+
+.event-source {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f1c40f;
+  color: #34495e;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.event-card.google {
+  border-left: 4px solid #3498db;
+}
+
+.event-card.hardcoded {
+  border-left: 4px solid #2ecc71;
+}
+
+.no-bayan {
+  text-align: center;
+  padding: 20px;
+  color: #e74c3c;
+  font-size: 16px;
+}
 </style>
 </head>
 
@@ -548,7 +706,8 @@
     </h1>
 
     <!-- পরিচিতি বাটন -->
-    <button class="inform" onclick="toggleDropdown()">পরিচিতি</button>
+     
+    <button class="inform" onclick="toggleDropdown()"> পরিচিতি</button>
 
     <!-- বিস্তারিত পরিচিতি -->
     <p class="ditels" id="dropdownContent">
@@ -576,20 +735,59 @@
       এছাড়াও তিনি দীর্ঘদিন ধরে বাইতুল আমান স্টিমারঘাট জামে মসজিদ, বাদামতলী, ঢাকায় খতীব হিসেবে দায়িত্বরত আছেন। পাশাপাশি ইসলামের প্রচার-প্রসার ও জনসাধারণের দ্বীন-ইমান সংরক্ষণের লক্ষ্যে তিনি সারাবছর দেশের বিভিন্ন অঞ্চলে ছুটে যান এবং বিভিন্ন দ্বীনি মাহফিলে গুরুত্বপূর্ণ বক্তৃতা রাখেন। তাঁর আল্লাহপ্রদত্ত গভীর ইলম, বিস্ময়কর উপস্থাপনাশক্তি ও বাগ্মীতার ফলে সর্বশ্রেণীর জনসাধারণ অত্যন্ত মুগ্ধচিত্তে তাঁর অমূল্য নসীহত শ্রবণ করে উপকৃত হয়।
     </p>
 
+          <!-- আজকের বয়ান বাটন -->
+<button class="today-btn" id="todayBtn">
+  হযরতজির আজকের বয়ান
+  <span id="todayDate"></span>
+</button>
+
+<!-- আজকের বয়ান পপআপ -->
+<div class="today-popup" id="todayPopup">
+  <div class="popup-content">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <h2>আজকের বয়ান শিডিউল</h2>
+    <div class="today-events" id="todayEvents">
+      <!-- ডেটা Google Calendar থেকে লোড হবে -->
+    </div>
+    
+    <h3>পরবর্তী ৩ দিনের বয়ান</h3>
+    <div class="next-days" id="nextDays">
+      <!-- ডেটা Google Calendar থেকে লোড হবে -->
+    </div>
+  </div>
+</div>
+
+
     <div class="nuru-link">
       <h2>বয়ানের লিংকসমূহ</h2>
       
       <a href="https://www.youtube.com/@islahbd" class="link-button">
         <div class="link-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> -->
+
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/dbcganmh.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#ffffff,secondary:#c71f16,tertiary:#3a3347">
+</lord-icon>
           <span class="link-name">YouTube</span>
         </div>
         <span class="arrow">→</span>
       </a>
-
+        
       <a href="https://www.facebook.com/islahiboyanBD" class="link-button">
         <div class="link-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+          <!--  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> -->
+
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/oemjpisw.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#ffffff,secondary:#3080e8">
+</lord-icon>
           <span class="link-name">Facebook</span>
         </div>
         <span class="arrow">→</span>
@@ -597,7 +795,15 @@
 
       <a href="https://chat.whatsapp.com/4RcgeqaGrZmGqCMgYeDidz" class="link-button">
         <div class="link-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> -->
+
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/dhcosedn.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#ffffff,secondary:#109121">
+</lord-icon>
           <span class="link-name">WhatsApp</span>
         </div>
         <span class="arrow">→</span>
@@ -605,7 +811,15 @@
 
       <a href="https://t.me/eslahiboyanbd" class="link-button">
         <div class="link-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> -->
+
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/kpqwgobz.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#ffffff,secondary:#3080e8">
+</lord-icon>
           <span class="link-name">Telegram</span>
         </div>
         <span class="arrow">→</span>
@@ -613,7 +827,15 @@
 
       <a href="https://eslahbd.com/" class="link-button">
         <div class="link-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/364/364089.png" alt="Web">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/364/364089.png" alt="Web"> -->
+
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/xmoniccu.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#ffffff,secondary:#66a1ee">
+</lord-icon>
           <span class="link-name">Web</span>
         </div>
         <span class="arrow">→</span>
@@ -621,7 +843,15 @@
 
       <a href="https://g.co/kgs/BXQoMGt" class="link-button">
         <div class="link-left">
-          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location"> -->
+
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/ebfcponz.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#66a1ee,secondary:#ffc738,tertiary:#109121,quaternary:#c74b16,quinary:#ffffff">
+</lord-icon>
           <span class="link-name">Madrasa Location</span>
         </div>
         <span class="arrow">→</span>
@@ -637,7 +867,16 @@
     
     <div style="text-align: center;">
       <h5 style="margin: 0; display: inline-flex; align-items: center; gap: 8px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width: 20px; height: 20px;">
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width: 20px; height: 20px;"> -->
+
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/ebfcponz.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#66a1ee,secondary:#ffc738,tertiary:#109121,quaternary:#c74b16,quinary:#ffffff"
+    style="width:50px;height:50px">
+</lord-icon>
         স্থানঃ জামেআ মারকাযুল ইহসান ঢাকা, গুলশানে আল্লামা শাহ্‌ আব্দুল মতীন কমপ্লেক্স, পাইটি, ডেমরা, ঢাকা।
       </h5>
     </div>
@@ -1032,10 +1271,41 @@
           const detailItem = document.createElement("div");
           detailItem.className = "detail-item";
           detailItem.innerHTML = `
-            <h3>📍 স্থানঃ ${d.location}</h3>
-            <p>🕓<strong> সময়ঃ</strong> ${d.time}</p>
-            <p>🧭<strong> যাতায়াতঃ</strong> ${d.route}</p>
-            <p>📞<strong> যোগাযোগঃ</strong> ${d.contact}</p><br>
+            <h3> 
+<lord-icon
+    src="https://cdn.lordicon.com/ebfcponz.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#66a1ee,secondary:#ffc738,tertiary:#109121,quaternary:#c74b16,quinary:#ffffff"
+    style="width:30px;height:30px">
+</lord-icon> স্থানঃ ${d.location}</h3>
+
+            <p>
+<lord-icon
+    src="https://cdn.lordicon.com/sgtmgpft.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#3a3347,secondary:#ffffff,tertiary:#109121,quaternary:#c74b16"
+    style="width:25px;height:25px">
+</lord-icon><strong> সময়ঃ</strong> ${d.time}</p>
+
+            <p>
+<lord-icon
+    src="https://cdn.lordicon.com/hjpkcwgj.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#3a3347,secondary:#66a1ee,tertiary:#ffc738"
+    style="width:25px;height:25px">
+</lord-icon><strong> যাতায়াতঃ</strong> ${d.route}</p>
+
+            <p>
+<lord-icon
+    src="https://cdn.lordicon.com/fzxfahqr.json"
+    trigger="loop"
+    delay="500"
+    colors="primary:#ffffff,secondary:#66a1ee"
+    style="width:25px;height:25px">
+</lord-icon><strong> যোগাযোগঃ</strong> ${d.contact}</p><br>
             <a class="map-button" href="${d.map}" target="_blank">Google Map এ দেখুন</a>
           `;
           locationInfo.appendChild(detailItem);
@@ -1094,6 +1364,205 @@
     // ইভেন্ট বাটন এবং ডিটেইলস তৈরি
     createEventButtonsAndDetails();
   });
+
+
+
+
+
+
+
+
+    // কনফিগারেশন
+const CONFIG = {
+  API_KEY: 'AIzaSyAYh4kx90B9zw2Qo0DTcNx5IDIMwwxlfUk',
+  CALENDAR_ID: 'ashikpushpo07@gmail.com',
+  USE_GOOGLE_CALENDAR: true // false করলে শুধু হার্ডকোডেড ডেটা ব্যবহার করবে
+};
+
+// মাসিক ইজতেমার হার্ডকোডেড ডেটা
+const REGULAR_EVENTS = [
+  {
+    title: "প্রথম বৃহস্পতিবার",
+    dayType: "বৃহস্পতিবার",
+    weekNumber: 1,
+    details: [
+      {
+        time: "বাদ আসর",
+        location: "মাদরাসা মারকাযুন নূর, চাঁদপুর",
+        route: "চাঁদপুর জেলা প্রশাসকের কার্যালয়ের অপর পাশে",
+        contact: "মাওলানা আতিকুর রহমান: +8801914586540",
+        map: "https://maps.app.goo.gl/tejSV1qFwEPo1Su28"
+      }
+    ]
+  },
+  // অন্যান্য ইভেন্ট যোগ করুন...
+];
+
+// প্রধান ফাংশন
+async function loadTodaysEvents() {
+  const today = new Date();
+  const endDate = new Date(today);
+  endDate.setDate(today.getDate() + 3);
+
+  let events = [];
+  
+  // ১. গুগল ক্যালেন্ডার থেকে ইভেন্ট লোড করুন (যদি এনাবল করা থাকে)
+  if (CONFIG.USE_GOOGLE_CALENDAR) {
+    try {
+      const googleEvents = await fetchGoogleCalendarEvents(today, endDate);
+      events.push(...googleEvents);
+    } catch (error) {
+      console.error("গুগল ক্যালেন্ডার থেকে ডেটা লোড করতে সমস্যা:", error);
+    }
+  }
+  
+  // ২. হার্ডকোডেড মাসিক ইভেন্ট যোগ করুন
+  events.push(...getHardcodedEventsForDateRange(today, endDate));
+  
+  // ৩. ইভেন্টগুলো সাজিয়ে UI তে দেখান
+  displayEvents(events, today);
+}
+
+// গুগল ক্যালেন্ডার থেকে ইভেন্ট ফেচ করুন
+async function fetchGoogleCalendarEvents(startDate, endDate) {
+  const timeMin = startDate.toISOString();
+  const timeMax = endDate.toISOString();
+  
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${CONFIG.CALENDAR_ID}/events?` +
+              `key=${CONFIG.API_KEY}&` +
+              `timeMin=${timeMin}&` +
+              `timeMax=${timeMax}&` +
+              `singleEvents=true&` +
+              `orderBy=startTime`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+  
+  return data.items.map(item => ({
+    source: 'google',
+    title: item.summary,
+    date: new Date(item.start.dateTime || item.start.date),
+    time: extractDetail(item.description, 'tm') || 'সময় নির্ধারিত হয়নি',
+    location: item.location || extractDetail(item.description, 'adr') || 'স্থান নির্ধারিত হয়নি',
+    route: extractDetail(item.description, 'dst') || 'যাতায়াতের তথ্য নেই',
+    contact: extractDetail(item.description, 'ph') || 'যোগাযোগের নম্বর নেই',
+    map: item.location ? `https://maps.google.com/?q=${encodeURIComponent(item.location)}` : ''
+  }));
+}
+
+// হার্ডকোডেড ইভেন্ট ফিল্টার করুন
+function getHardcodedEventsForDateRange(startDate, endDate) {
+  const events = [];
+  const currentDate = new Date(startDate);
+  
+  while (currentDate <= endDate) {
+    const dayEvents = getHardcodedEventsForDate(currentDate);
+    events.push(...dayEvents);
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+  
+  return events;
+}
+
+// নির্দিষ্ট তারিখের হার্ডকোডেড ইভেন্ট বের করুন
+function getHardcodedEventsForDate(date) {
+  const dayName = date.toLocaleDateString('bn-BD', { weekday: 'long' });
+  const weekNumber = Math.ceil(date.getDate() / 7);
+  
+  return REGULAR_EVENTS.filter(event => {
+    if (event.weekNumber === "all") {
+      return event.dayType === dayName;
+    }
+    return event.dayType === dayName && 
+           (event.weekNumber === weekNumber || 
+            event.weekNumber === Math.ceil((date.getDate() + new Date(date.getFullYear(), date.getMonth(), 1).getDay()) / 7));
+  }).flatMap(event => event.details.map(detail => ({
+    source: 'hardcoded',
+    title: event.title,
+    date: new Date(date),
+    time: detail.time,
+    location: detail.location,
+    route: detail.route,
+    contact: detail.contact,
+    map: detail.map
+  })));
+}
+
+// ইভেন্ট প্রদর্শন করুন
+function displayEvents(events, today) {
+  const todayEvents = events.filter(e => isSameDay(e.date, today));
+  const nextDaysEvents = events.filter(e => !isSameDay(e.date, today));
+  
+  // UI আপডেট করুন
+  updateEventContainer('todayEvents', todayEvents, 'আজকের কোনো বয়ান শিডিউল নেই');
+  updateEventContainer('nextDays', nextDaysEvents, 'পরবর্তী ৩ দিনের কোনো বয়ান শিডিউল নেই');
+}
+
+// সাহায্যকারী ফাংশন
+function isSameDay(d1, d2) {
+  return d1.getDate() === d2.getDate() && 
+         d1.getMonth() === d2.getMonth() && 
+         d1.getFullYear() === d2.getFullYear();
+}
+
+function extractDetail(desc, tag) {
+  if (!desc) return null;
+  const regex = new RegExp(`\\b${tag}:(.+?)(?:\\n|$)`);
+  const match = desc.match(regex);
+  return match ? match[1].trim() : null;
+}
+
+function updateEventContainer(containerId, events, emptyMessage) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = events.length > 0 
+    ? events.map(createEventCard).join('')
+    : `<div class="no-bayan">${emptyMessage}</div>`;
+}
+
+function createEventCard(event) {
+  return `
+    <div class="event-card ${event.source}">
+      <div class="event-title">${event.title}</div>
+      <div class="event-detail-row">
+        <span class="detail-icon">📍</span>
+        <span>${event.location}</span>
+      </div>
+      <div class="event-detail-row">
+        <span class="detail-icon">⏰</span>
+        <span>${event.time}</span>
+      </div>
+      <div class="event-detail-row">
+        <span class="detail-icon">🛣️</span>
+        <span>${event.route}</span>
+      </div>
+      <div class="event-detail-row">
+        <span class="detail-icon">📞</span>
+        <span>${event.contact}</span>
+      </div>
+      ${event.map ? `<a href="${event.map}" target="_blank" class="map-link">ম্যাপে দেখুন</a>` : ''}
+      <div class="event-source">${event.source === 'google' ? 'গুগল ক্যালেন্ডার' : 'নিয়মিত মজলিস'}</div>
+    </div>
+  `;
+}
+
+// পেজ লোড হলে ইনিশিয়ালাইজ করুন
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('bn-BD', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  
+  document.getElementById('todayBtn').addEventListener('click', () => {
+    document.getElementById('todayPopup').style.display = 'flex';
+    loadTodaysEvents();
+  });
+  
+  document.getElementById('closeBtn').addEventListener('click', () => {
+    document.getElementById('todayPopup').style.display = 'none';
+  });
+});
 </script>
 
 </body>
