@@ -1,0 +1,747 @@
+/* গ্লোবাল স্টাইলস - পুরো সাইটের সাধারণ স্টাইল */
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e6e6e6;
+}
+
+/* বাংলা ফন্ট প্রয়োগ */
+.bengali-font {
+  font-family: 'SolaimanLipi', 'Segoe UI', sans-serif;
+}
+
+/* লোডার স্টাইল - পেজ লোড হওয়ার সময় দেখানো হবে */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#loader img {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.spinner {
+  border: 4px solid #ccc;
+  border-top: 4px solid #3c9d8f;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* মেইন কন্টেইনার স্টাইল - মূল কন্টেন্টের জন্য */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px auto;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgb(185, 250, 198);
+}
+
+h1, h2, h3, h5 {
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+/* পরিচিতি বাটন স্টাইল */
+.inform {
+  background-color: #d8d8d8;
+  color: rgb(3, 78, 10);
+  padding: 5px 80px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'SolaimanLipi', sans-serif;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgb(108, 94, 94);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inform:hover {
+  box-shadow: 0 10px 40px rgb(108, 94, 94);
+  transform: scale(1.02);
+}
+
+.ditels {
+  background-color: #f9f9f9;
+  margin-top: 15px;
+  border-radius: 8px;
+  line-height: 1.8;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  transition: all 0.5s ease;
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.ditels.open {
+  padding: 15px;
+  max-height: 5000px; 
+}
+
+/* বয়ানের লিংক সেকশন স্টাইল */
+.nuru-link {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f0f9f5;
+  border-left: 6px solid #ffc107;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+p {
+  margin-bottom: 25px;
+  color: #605e5e;
+  font-size: 20px;
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+/* লিংক বাটন স্টাইল */
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  margin: 12px auto;
+  padding: 14px 20px;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.link-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link-left lord-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.link-name {
+  font-size: 15px;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #a09d9d;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* মাসিক ইজতেমা সেকশন স্টাইল */
+.masik-ijtema {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f0f9f5;
+  border-left: 6px solid #ffc107;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.masik-ijtema img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+.masik-ijtema h2 {
+  font-size: 25px;
+  color: #600000;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.masik-ijtema h1 {
+  font-size: 35px;
+  color: #7e0000;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.masik-ijtema p {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.masik-ijtema a {
+  display: inline-block;
+  padding: 6px 20px;
+  background-color: #ffe17e;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.masik-ijtema a:hover {
+  background-color: #f0fab2;
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+h5 {
+  font-size: 20px;
+  margin: 0px;
+  color: #000000;
+  text-align: center;
+}
+
+/* বয়ান শিডিউল সেকশন স্টাইল */
+.bayaan-schedule {
+  border-left: 6px solid #ffc107;    
+  background-color: #f0f9f5;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.bayaan-schedule h2 {
+  color: #5c0202;
+  margin-bottom: 25px;
+  margin-top: -20px;
+  font-size: 37px;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #133f09;
+}
+
+.bayaan-schedule h3 {
+  text-align: center;
+  color: #400202; 
+  font-size: 22px;
+}
+
+.event-container {
+  width: 100%;
+}
+
+.event-button {
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: 'SolaimanLipi', sans-serif;
+  display: block;
+  transition: all 0.3s ease;
+  color: #141a21;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-button.active {
+  background-color: #e6f0ff;
+  color: #1a3a7e;
+  box-shadow: 0 4px 12px rgba(26, 58, 126, 0.2);
+}
+
+.event-button:hover {
+  background-color: #f0f4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.event-details {
+  display: none;
+  background-color: #fff;
+  border: 2px solid #e2e8f0;
+  margin: 12px 0 20px;
+  border-radius: 8px;
+  padding: 18px;
+  width: calc(100% - 36px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.event-details.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+
+.location-info {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 2px 5px #9f9d9d;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.calendar-container {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px #9f9d9d;
+  border-radius: 10px;
+  padding: 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nav-arrow {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  user-select: none;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.nav-arrow:hover {
+  background: #e0e0e0;
+}
+
+.month-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 8px;
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid #3c3a3a;
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.event-details h3 {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.calendar {
+  border: 1px solid #e2e8f0;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  flex-grow: 1;
+  table-layout: fixed;
+}
+
+.calendar th {
+  background-color: #cecece;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #e2e8f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calendar td {
+  padding: 8px;
+  border: 1px solid #e3edfa;
+  text-align: center;
+  font-size: 13px;
+  height: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* আজকের তারিখের জন্য স্টাইল */
+.today {
+  background-color: #e6f7ff;
+  font-weight: bold;
+  position: relative;
+}
+
+/* ইভেন্ট তারিখের জন্য স্টাইল */
+.highlight {
+  background-color: #d7f7d7;
+  font-weight: bold;
+  color: #1a7f1a;
+  position: relative;
+}
+
+.highlight::after {
+  content: 'মজলিস';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #1a7f1a;
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.map-button {
+  width: 100%;
+  padding: 5px 0px;
+  background-color: #3fbd23 !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(74, 107, 223, 0.3);
+  font-family: 'SolaimanLipi', sans-serif;
+}
+
+.map-button:hover {
+  background-color: #56dc37 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 107, 223, 0.4);
+}
+
+.detail-item {
+  margin-top: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #28292b;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item p {
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* রেসপনসিভ স্টাইল - মোবাইল ডিভাইসের জন্য */
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+  }
+  
+  .calendar th, 
+  .calendar td {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .event-button {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+  
+  .detail-item p {
+    font-size: 14px;
+  }
+  
+  .bayaan-schedule h2 {
+    font-size: 28px;
+  }
+  
+  .event-button {
+    font-size: 20px;
+  }
+}
+
+/* বয়ান উইজেট স্টাইল */
+:root {
+  --bg: #f0f9f5;
+  --accent-green: #e4fbd8;
+  --accent-green-text: #117a00;
+  --card-pink: #fde1f5;
+  --card-border: #77afff;
+  --month-red: #dc2822;
+  --dot-active: #5fa1ff;
+  --dot-inactive: #ece9e9;
+}
+
+.widget-container {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: flex;
+  background: #fff;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .widget-container {
+    height: 150px;
+  }
+}
+
+.dots-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+  background-color: #f0f9f5;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot-inactive);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--dot-active);
+}
+
+.widget-slides {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.widget-slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform .45s ease;
+  will-change: transform;
+}
+
+.widget {
+  background: var(--bg);
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .widget {
+    padding:0px;
+  }
+}
+
+.header {
+  background: var(--accent-green);
+  border-radius: 10px;
+  padding: 0px;
+  text-align: center;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  
+}
+
+.header h1 {
+  font-size: 18px;
+  color: var(--accent-green-text);
+}
+
+@media (min-width: 769px) {
+  .header h1 {
+    font-size: 22px;
+  }
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  min-height: 0;
+  margin-right: 5px;
+}
+
+.date-col {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-line {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.month-line .mon {
+  color: var(--month-red);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+.month-line .month {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+.day {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  line-height: 1;
+}
+
+@media (min-width: 769px) {
+  .month-line .mon, .month-line .month {
+    font-size: 30px;
+  }
+  .day {
+    font-size: 70px;
+  }
+}
+
+.cards {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+  max-height: 100%;
+  padding-right: 4px;
+}
+
+.card {
+  background: var(--card-pink);
+  border-radius: 10px;
+  padding: 8px 10px 8px 16px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  background: var(--card-border);
+  border-radius: 2px;
+}
+
+.card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 2px;
+   text-align: left; /* বাম থেকে শুরু হবে */
+  direction: ltr; /* বাম থেকে ডানে */
+  margin: 2px 0; /* লাইন স্পেসিং কম */
+
+}
+
+.card p {
+  font-size: 12px;
+  line-height: 1.3;
+   text-align: left; /* বাম থেকে শুরু হবে */
+  direction: ltr; /* বাম থেকে ডানে */
+  margin: 2px 0; /* লাইন স্পেসিং কম */
+
+}
+
+@media (min-width: 769px) {
+  .card h3 {
+    font-size: 16px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.event-item {
+  border-top: 1px dashed #ddd;
+  padding-top: 5px;
+  margin-top: 5px;
+}
