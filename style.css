@@ -1,747 +1,468 @@
-/* গ্লোবাল স্টাইলস - পুরো সাইটের সাধারণ স্টাইল */
+/* Custom Font for Bengali - SolaimanLipi */
 @import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #e6e6e6;
+    font-family: 'SolaimanLipi', 'Hind Siliguri', sans-serif;
+    background-color: #fafbfc;
+    padding-bottom: 80px;
 }
 
-/* বাংলা ফন্ট প্রয়োগ */
-.bengali-font {
-  font-family: 'SolaimanLipi', 'Segoe UI', sans-serif;
+.bg-custom-mint {
+    background-color: #80ffcc;
 }
 
-/* লোডার স্টাইল - পেজ লোড হওয়ার সময় দেখানো হবে */
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
+/* Mobile Container Constraint */
+#app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.02);
+    position: relative;
+    overflow-x: hidden;
 }
 
-#loader img {
-  width: 250px;
-  margin-bottom: 20px;
+/* News Ticker Animation */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background-color: #cedcf4;
+    color: #1a1a1a;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
-.spinner {
-  border: 4px solid #ccc;
-  border-top: 4px solid #3c9d8f;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 1s linear infinite;
+.ticker {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 70s linear infinite;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes ticker {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
 }
 
-/* মেইন কন্টেইনার স্টাইল - মূল কন্টেন্টের জন্য */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px 20px;
-  text-align: center;
+/* Slider Animation */
+.slider-track {
+    display: flex;
 }
 
-.logo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 20px auto;
-  object-fit: cover;
-  box-shadow: 0 10px 20px rgb(185, 250, 198);
+.slide {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-h1, h2, h3, h5 {
-  font-family: 'SolaimanLipi', sans-serif;
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }
 
-h1 {
-  font-size: 30px;
-  margin-bottom: 15px;
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* পরিচিতি বাটন স্টাইল */
-.inform {
-  background-color: #d8d8d8;
-  color: rgb(3, 78, 10);
-  padding: 5px 80px;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: 'SolaimanLipi', sans-serif;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 4px 15px rgb(108, 94, 94);
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Active Nav State */
+.nav-item.active {
+    color: #059669;
 }
 
-.inform:hover {
-  box-shadow: 0 10px 40px rgb(108, 94, 94);
-  transform: scale(1.02);
+.nav-item.active i {
+    transform: translateY(-2px);
 }
 
-.ditels {
-  background-color: #f9f9f9;
-  margin-top: 15px;
-  border-radius: 8px;
-  line-height: 1.8;
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 15px;
-  transition: all 0.5s ease;
-  font-family: 'SolaimanLipi', sans-serif;
+/* Card Hover Effect */
+.hover-card {
+    transition: transform 0.2s;
 }
 
-.ditels.open {
-  padding: 15px;
-  max-height: 5000px; 
+.hover-card:active {
+    transform: scale(0.98);
 }
 
-/* বয়ানের লিংক সেকশন স্টাইল */
-.nuru-link {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f0f9f5;
-  border-left: 6px solid #ffc107;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  font-family: 'SolaimanLipi', sans-serif;
+/* --- Bayan Widget Design --- */
+.bayan-card {
+    background-color: #f8fafc;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border: 1px solid #e2e8f0;
 }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #000000;
+.bayan-header {
+    background-color: #e8f5e9;
+    padding: 6px 12px;
+    text-align: center;
+    border-bottom: 1px solid #c8e6c9;
 }
 
-p {
-  margin-bottom: 25px;
-  color: #605e5e;
-  font-size: 20px;
-  font-family: 'SolaimanLipi', sans-serif;
+.bayan-header h2 {
+    color: #0f3913;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-/* লিংক বাটন স্টাইল */
-.link-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  margin: 12px auto;
-  padding: 14px 20px;
-  width: 85%;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  text-decoration: none;
-  transition: all 0.3s ease;
+.bayan-body {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
 }
 
-.link-button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.bayan-date-box {
+    flex: 0 0 75px;
+    text-align: center;
+    border-right: 1px solid #e2e8f0;
+    padding-right: 12px;
 }
 
-.link-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.bayan-day-month {
+    font-size: 0.85rem;
+    color: #000000;
+    font-weight: 600;
 }
 
-.link-left lord-icon {
-  width: 26px;
-  height: 26px;
+.bayan-day-name {
+    color: #e42020;
 }
 
-.link-name {
-  font-size: 15px;
-  color: #333;
-  font-family: 'Segoe UI', sans-serif;
+.bayan-date-num {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 2px;
+    color: #000000;
 }
 
-.arrow {
-  font-size: 18px;
-  color: #a09d9d;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* মাসিক ইজতেমা সেকশন স্টাইল */
-.masik-ijtema {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f0f9f5;
-  border-left: 6px solid #ffc107;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-}
-
-.masik-ijtema img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px auto;
-}
-
-.masik-ijtema h2 {
-  font-size: 25px;
-  color: #600000;
-  margin: 0 0 10px;
-  text-align: center;
-}
-
-.masik-ijtema h1 {
-  font-size: 35px;
-  color: #7e0000;
-  margin: 0 0 10px;
-  text-align: center;
-}
-
-.masik-ijtema p {
-  color: #000000;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.masik-ijtema a {
-  display: inline-block;
-  padding: 6px 20px;
-  background-color: #ffe17e;
-  color: black;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-family: 'SolaimanLipi', sans-serif;
-}
-
-.masik-ijtema a:hover {
-  background-color: #f0fab2;
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-h5 {
-  font-size: 20px;
-  margin: 0px;
-  color: #000000;
-  text-align: center;
-}
-
-/* বয়ান শিডিউল সেকশন স্টাইল */
-.bayaan-schedule {
-  border-left: 6px solid #ffc107;    
-  background-color: #f0f9f5;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  border-radius: 12px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-}
-
-.bayaan-schedule h2 {
-  color: #5c0202;
-  margin-bottom: 25px;
-  margin-top: -20px;
-  font-size: 37px;
-  text-align: center;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #133f09;
-}
-
-.bayaan-schedule h3 {
-  text-align: center;
-  color: #400202; 
-  font-size: 22px;
-}
-
-.event-container {
-  width: 100%;
-}
-
-.event-button {
-  width: 100%;
-  background-color: #ffffff;
-  border: none;
-  padding: 12px 20px;
-  margin: 10px 0;
-  cursor: pointer;
-  font-size: 25px;
-  font-family: 'SolaimanLipi', sans-serif;
-  display: block;
-  transition: all 0.3s ease;
-  color: #141a21;
-  font-weight: 400;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.event-button.active {
-  background-color: #e6f0ff;
-  color: #1a3a7e;
-  box-shadow: 0 4px 12px rgba(26, 58, 126, 0.2);
-}
-
-.event-button:hover {
-  background-color: #f0f4ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.event-details {
-  display: none;
-  background-color: #fff;
-  border: 2px solid #e2e8f0;
-  margin: 12px 0 20px;
-  border-radius: 8px;
-  padding: 18px;
-  width: calc(100% - 36px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-  font-family: 'SolaimanLipi', sans-serif;
-}
-
-.event-details.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.details-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  width: 100%;
-}
-
-.location-info {
-  flex: 1;
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 0 2px 5px #9f9d9d;
-  border-radius: 10px;
-  padding: 0 10px;
-}
-
-.calendar-container {
-  flex: 1;
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 5px #9f9d9d;
-  border-radius: 10px;
-  padding: 0 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.calendar-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.nav-arrow {
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 5px 10px;
-  background: #f0f0f0;
-  border-radius: 5px;
-  user-select: none;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.nav-arrow:hover {
-  background: #e0e0e0;
-}
-
-.month-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 10px;
-  padding: 8px;
-  color: rgb(0, 0, 0);
-  border-bottom: 1px solid #3c3a3a;
-  font-family: 'SolaimanLipi', sans-serif;
-}
-
-.event-details h3 {
-  margin: 0 0 12px 0;
-  color: #2c3e50;
-  font-size: 18px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.calendar {
-  border: 1px solid #e2e8f0;
-  border-collapse: collapse;
-  width: 100%;
-  background-color: white;
-  flex-grow: 1;
-  table-layout: fixed;
-}
-
-.calendar th {
-  background-color: #cecece;
-  color: rgb(0, 0, 0);
-  padding: 10px;
-  font-weight: 500;
-  font-size: 14px;
-  border: 1px solid #e2e8f0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.calendar td {
-  padding: 8px;
-  border: 1px solid #e3edfa;
-  text-align: center;
-  font-size: 13px;
-  height: auto;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* আজকের তারিখের জন্য স্টাইল */
-.today {
-  background-color: #e6f7ff;
-  font-weight: bold;
-  position: relative;
-}
-
-/* ইভেন্ট তারিখের জন্য স্টাইল */
-.highlight {
-  background-color: #d7f7d7;
-  font-weight: bold;
-  color: #1a7f1a;
-  position: relative;
-}
-
-.highlight::after {
-  content: 'মজলিস';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 8px;
-  color: #1a7f1a;
-  font-family: 'SolaimanLipi', sans-serif;
-}
-
-.map-button {
-  width: 100%;
-  padding: 5px 0px;
-  background-color: #3fbd23 !important;
-  color: #ffffff !important;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: block;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-size: 15px;
-  margin-top: 15px;
-  box-shadow: 0 2px 5px rgba(74, 107, 223, 0.3);
-  font-family: 'SolaimanLipi', sans-serif;
-}
-
-.map-button:hover {
-  background-color: #56dc37 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(74, 107, 223, 0.4);
-}
-
-.detail-item {
-  margin-top: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #28292b;
-}
-
-.detail-item:last-child {
-  border-bottom: none;
-}
-
-.detail-item p {
-  margin: 5px 0;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-/* রেসপনসিভ স্টাইল - মোবাইল ডিভাইসের জন্য */
-@media (max-width: 768px) {
-  .details-container {
+.bayan-nav-btns {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
     flex-direction: column;
-  }
-  
-  .calendar th, 
-  .calendar td {
-    padding: 6px;
-    font-size: 12px;
-  }
-  
-  .event-button {
-    padding: 12px 15px;
-    font-size: 16px;
-  }
-  
-  .detail-item p {
-    font-size: 14px;
-  }
-  
-  .bayaan-schedule h2 {
-    font-size: 28px;
-  }
-  
-  .event-button {
-    font-size: 20px;
-  }
+    gap: 6px;
+    z-index: 20;
 }
 
-/* বয়ান উইজেট স্টাইল */
-:root {
-  --bg: #f0f9f5;
-  --accent-green: #e4fbd8;
-  --accent-green-text: #117a00;
-  --card-pink: #fde1f5;
-  --card-border: #77afff;
-  --month-red: #dc2822;
-  --dot-active: #5fa1ff;
-  --dot-inactive: #ece9e9;
+.bayan-nav-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #c8e6c9;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.6rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.widget-container {
-  width: 100%;
-  max-width: 800px;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  display: flex;
-  background: #fff;
-  margin: 20px auto;
+.bayan-nav-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .widget-container {
-    height: 150px;
-  }
+.bayan-info-box {
+    flex: 1;
+    background-color: #fff0f9;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+    margin-right: 15px;
 }
 
-.dots-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 10px;
-  background-color: #f0f9f5;
+.bayan-location {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #000000;
+    line-height: 1.2;
+    margin-bottom: 4px;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--dot-inactive);
-  cursor: pointer;
+.bayan-details {
+    font-size: 0.75rem;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-.dot.active {
-  background: var(--dot-active);
+.bayan-details .label {
+    color: #000000;
+    font-weight: 600;
 }
 
-.widget-slides {
-  flex: 1;
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  touch-action: pan-y;
+/* --- Social Media Section --- */
+#links-section {
+    background-color: #f8fafc;
 }
 
-.widget-slide {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform .45s ease;
-  will-change: transform;
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
 }
 
-.widget {
-  background: var(--bg);
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+.social-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .widget {
-    padding:0px;
-  }
+.social-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.header {
-  background: var(--accent-green);
-  border-radius: 10px;
-  padding: 0px;
-  text-align: center;
-  margin-bottom: 3px;
-  margin-right: 5px;
-  
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
 }
 
-.header h1 {
-  font-size: 18px;
-  color: var(--accent-green-text);
+.social-label {
+    font-size: 0.85rem;
+    color: #334155;
+    font-weight: 500;
 }
 
-@media (min-width: 769px) {
-  .header h1 {
-    font-size: 22px;
-  }
+/* Brand Colors */
+.icon-yt {
+    background-color: #ffebee;
+    color: #f44336;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  gap: 10px;
-  min-height: 0;
-  margin-right: 5px;
+.icon-fb {
+    background-color: #e3f2fd;
+    color: #1565c0;
 }
 
-.date-col {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.icon-wa {
+    background-color: #e8f5e9;
+    color: #2e7d32;
 }
 
-.month-line {
-  display: flex;
-  gap: 6px;
-  align-items: baseline;
+.icon-tg {
+    background-color: #e1f5fe;
+    color: #0288d1;
 }
 
-.month-line .mon {
-  color: var(--month-red);
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+.icon-web {
+    background-color: #f3e5f5;
+    color: #7b1fa3;
 }
 
-.month-line .month {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+.icon-loc {
+    background-color: #fff3e0;
+    color: #ef6c00;
 }
 
-.day {
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
-  line-height: 1;
+/* Majlis Calendar Minimalist Styles */
+#majlis-calendar-container {
+    font-family: 'SolaimanLipi', sans-serif;
+    border: none;
+    box-shadow: none;
 }
 
-@media (min-width: 769px) {
-  .month-line .mon, .month-line .month {
-    font-size: 30px;
-  }
-  .day {
-    font-size: 70px;
-  }
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
 }
 
-.cards {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  overflow: auto;
-  max-height: 100%;
-  padding-right: 4px;
+.calendar-header-month {
+    font-weight: 900;
+    color: #000000;
+    font-size: 1.4rem;
+    text-transform: uppercase;
 }
 
-.card {
-  background: var(--card-pink);
-  border-radius: 10px;
-  padding: 8px 10px 8px 16px;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
+.calendar-header-year {
+    font-weight: 900;
+    color: #dc0b0b;
+    /* Bright Red */
+    font-size: 1.4rem;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  bottom: 8px;
-  width: 4px;
-  background: var(--card-border);
-  border-radius: 2px;
+.calendar-header-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-.card h3 {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 2px;
-   text-align: left; /* বাম থেকে শুরু হবে */
-  direction: ltr; /* বাম থেকে ডানে */
-  margin: 2px 0; /* লাইন স্পেসিং কম */
-
+.calendar-nav-btn {
+    color: #94a3b8;
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
-.card p {
-  font-size: 12px;
-  line-height: 1.3;
-   text-align: left; /* বাম থেকে শুরু হবে */
-  direction: ltr; /* বাম থেকে ডানে */
-  margin: 2px 0; /* লাইন স্পেসিং কম */
-
+.calendar-nav-btn:hover {
+    color: #000000;
 }
 
-@media (min-width: 769px) {
-  .card h3 {
-    font-size: 16px;
-  }
-  .card p {
-    font-size: 14px;
-  }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid #e2e8f0;
+    padding-top: 10px;
 }
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.calendar-day-label {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #000000;
+    padding: 10px 0;
 }
-.event-item {
-  border-top: 1px dashed #ddd;
-  padding-top: 5px;
-  margin-top: 5px;
+
+.calendar-day {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    color: #000000;
+}
+
+/* Sundays/Saturdays Black */
+.calendar-day-label:first-child,
+.calendar-day-label:last-child {
+    color: #000000;
+}
+
+.calendar-grid>div:nth-child(7n+1),
+.calendar-grid>div:nth-child(7n) {
+    color: #000000;
+}
+
+.calendar-day:hover:not(.empty) {
+    background-color: #f8fafc;
+}
+
+.calendar-day.highlight {
+    background-color: #dcfce7;
+    /* Light Green */
+    color: #000000 !important;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+.calendar-day.today {
+    box-shadow: inset 0 0 0 1px #e2e8f0;
+    border-radius: 4px;
+}
+
+.calendar-day.empty {
+    cursor: default;
+}
+
+/* Cute Popup Style */
+#majlis-modal .bg-white {
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+#majlis-modal .bg-emerald-600 {
+    background-color: #f8fafc;
+    color: #1e293b;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+#majlis-modal h3 {
+    color: #1e293b;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+#majlis-modal .fa-times {
+    color: #3e4857;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+#majlis-modal .fa-times:hover {
+    color: #f43f5e;
+    transform: rotate(90deg);
+}
+
+.majlis-detail-card {
+    background: #ffffff;
+    border: 1px solid #f8fafc;
+    border-radius: 28px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+}
+
+.majlis-detail-card i {
+    opacity: 1;
+}
+
+.majlis-detail-card p.text-\[10px\] {
+    color: #413e4f;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.majlis-detail-card .bg-emerald-600 {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    color: white !important;
+}
+
+.majlis-detail-card .bg-emerald-600:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(97, 253, 201, 0.829);
+}
+
+/* OK Button Styling for Cute look */
+#majlis-modal button.bg-slate-100 {
+    background: #f1f5f9;
+    color: #64748b !important;
+    border-radius: 16px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    padding: 0.8rem 2rem;
+}
+
+#majlis-modal button.bg-slate-100:hover {
+    background: #e2e8f0;
+    color: #1e293b !important;
+    transform: scale(1.05);
 }
