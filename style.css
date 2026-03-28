@@ -1,0 +1,1049 @@
+:root {
+    --neu-bg: #f3f4f6;
+    --neu-light: #ffffff;
+    --neu-dark: #c1c9d8;
+    --neu-accent: #10b981;
+    --neu-radius: 24px;
+}
+
+body {
+    background-color: var(--neu-bg);
+    padding-bottom: 80px;
+    font-family: 'SolaimanLipi', 'Hind Siliguri', sans-serif !important;
+}
+
+.bg-custom-mint {
+    background-color: #80ffcc;
+}
+
+/* Mobile Container Constraint */
+#app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: var(--neu-bg);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Neumorphic Components */
+.neu-header {
+    background: #ffffff;
+    margin: 0;
+    padding: 12px 16px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.neu-slider-wrapper {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+/* News Ticker - flat strip */
+.ticker-pill-main {
+    background: #f0fdf4;
+    box-shadow: none;
+    border: 1px solid #d1fae5;
+    border-radius: 8px !important;
+}
+
+.ticker-track-inset {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+
+@media (max-width: 480px) {
+    .ticker-pill-main {
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+    .slider-container {
+        margin-bottom: 0 !important;
+        aspect-ratio: 16 / 9 !important;
+        height: auto !important;
+    }
+    .slider-track, .slide {
+        height: 100% !important;
+    }
+    section.p-0 {
+        padding-top: 0 !important;
+        margin-top: -1px; 
+        background-color: #f0fdf4 !important; /* Ticker color to hide any hairline gaps */
+    }
+    .ticker-pill-main {
+        border-radius: 0 !important;
+        margin-top: 0 !important;
+        border-top: none !important;
+    }
+}
+
+.ticker-scroll-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker-slide 60s linear infinite;
+}
+
+@keyframes ticker-slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.ticker-label-raised {
+    background: #f5bd3d !important;
+    cursor: default;
+    border-radius: 20px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* Slider Animation */
+.slider-container {
+    position: relative;
+    z-index: 10;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Active Nav State */
+.nav-item.active {
+    color: var(--neu-accent);
+}
+
+.nav-item.active i {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3));
+}
+
+.neu-footer {
+    background: #ffffff;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Card Hover Effect */
+.hover-card {
+    transition: transform 0.2s;
+}
+
+.hover-card:active {
+    transform: scale(0.98);
+}
+
+/* --- Bayan Widget (Schedule) Car Design --- */
+.neu-section-title {
+    background: transparent;
+    padding: 0 0 12px 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    border: none;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.neu-section-title h2 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+}
+
+.neu-section-title .accent-bar {
+    width: 4px;
+    height: 20px;
+    background: #10b981;
+    border-radius: 2px;
+}
+
+/* Soft colored bayan cards */
+.bayan-card {
+    background: #f0fdf4;
+    border-radius: 12px;
+    padding: 12px 16px;
+    position: relative;
+    box-shadow: none;
+    border: 1px solid #d1fae5;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.bayan-card:nth-child(2n) {
+    background: #fff7ed;
+    border-color: #fed7aa;
+}
+
+.bayan-card:nth-child(3n) {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.bayan-card:nth-child(4n) {
+    background: #fdf4ff;
+    border-color: #e9d5ff;
+}
+
+.bayan-header {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.glow-pill {
+    background: transparent;
+    width: 100%;
+    max-width: 400px;
+    padding: 4px 0;
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #e5e7eb;
+    z-index: 5;
+    transition: none;
+}
+
+.glow-pill:active {
+    box-shadow: none;
+    transform: none;
+}
+
+.glow-pill .pill-text {
+    color: #1e293b;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.glow-pill .pill-icon {
+    color: #10b981;
+    font-size: 1.3rem;
+    filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3));
+}
+
+.bayan-body {
+    display: flex;
+    align-items: stretch !important;
+    gap: 15px;
+}
+
+
+.bayan-date-box {
+    flex: 0 0 74px !important;
+    padding: 4px !important;
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    border: none;
+    border-right: 2px solid #e5e7eb;
+}
+
+
+.bayan-day-month {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 700;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    line-height: 1.1;
+}
+
+
+.bayan-day-name {
+    color: #ef4444;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+
+.bayan-date-num {
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #1e293b;
+}
+
+
+.bayan-nav-btns {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 20;
+}
+
+
+.bayan-nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+
+.bayan-nav-btn:hover {
+    color: #10b981;
+    transform: translateY(-1px);
+}
+
+
+.bayan-nav-btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+.bayan-info-box {
+    flex: 1;
+    background: transparent;
+    padding: 2px 12px;
+    border-radius: 0;
+    box-shadow: none;
+    margin-right: 45px;
+    border: none;
+}
+
+.bayan-location {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #1e293b;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.bayan-details {
+    font-size: 0.8rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.bayan-details .label {
+    color: #64748b;
+    font-weight: 700;
+}
+
+/* --- Social Media Section --- */
+#links-section {
+    background-color: transparent;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Remove section-level wrapper box from majlis section */
+#majlis-section {
+    background: transparent;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.social-card {
+    background-color: #f0fdf4;
+    border-radius: 12px;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+    border: 1px solid #d1fae5;
+    min-height: 140px;
+    position: relative;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+/* Platform-specific soft colors */
+a.social-card:nth-child(1) { background: #fff1f2; border-color: #fecdd3; }
+a.social-card:nth-child(2) { background: #eff6ff; border-color: #bfdbfe; }
+a.social-card:nth-child(3) { background: #f0fdf4; border-color: #bbf7d0; }
+a.social-card:nth-child(4) { background: #f0f9ff; border-color: #bae6fd; }
+a.social-card:nth-child(5) { background: #fdf4ff; border-color: #e9d5ff; }
+a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
+
+/* Underlight Glow for Social Cards */
+.social-card .glow-light { display: none; }
+
+.social-card:hover .glow-light { display: none; }
+
+.social-card:hover {
+    transform: translateY(-3px);
+}
+
+.social-card-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.social-label {
+    font-size: 0.95rem;
+    color: #1e293b;
+    font-weight: 800;
+}
+
+.social-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-yt {
+    color: #ef4444;
+}
+
+.badge-fb {
+    color: #3b82f6;
+}
+
+.badge-wa {
+    color: #22c55e;
+}
+
+.badge-tg {
+    color: #0ea5e9;
+}
+
+.badge-web {
+    color: #8b5cf6;
+}
+
+.badge-loc {
+    color: #f59e0b;
+}
+
+.glow-button {
+    background: #ffffff;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        8px 8px 16px #beccda,
+        -8px -8px 16px #ffffff;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    overflow: visible;
+    /* To allow glow to show */
+    width: 100%;
+}
+
+.icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.7);
+}
+
+.social-card:hover .icon-circle {
+    box-shadow: none;
+    transform: scale(1.05);
+}
+
+.social-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.social-footer i {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Long Title Button */
+.title-button {
+    padding: 10px 0;
+    margin: 5px 0;
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+}
+
+.title-button .button-content {
+    color: #059669;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Brand Colors - transparent backgrounds to show card color */
+.icon-yt  { color: #dc2626; background: rgba(255,255,255,0.6); }
+.icon-fb  { color: #1d4ed8; background: rgba(255,255,255,0.6); }
+.icon-wa  { color: #16a34a; background: rgba(255,255,255,0.6); }
+.icon-tg  { color: #0284c7; background: rgba(255,255,255,0.6); }
+.icon-web { color: #7c3aed; background: rgba(255,255,255,0.6); }
+.icon-loc { background: rgba(255,255,255,0.6); color: #ea580c; }
+
+/* Majlis Calendar Minimalist Styles */
+#majlis-calendar-container {
+    font-family: 'SolaimanLipi', sans-serif;
+    border: none;
+    box-shadow: none;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.calendar-header-month {
+    font-weight: 900;
+    color: #000000;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.calendar-header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.calendar-header-year {
+    color: #ef4444;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.calendar-nav-btn {
+    color: #94a3b8;
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.calendar-nav-btn:hover {
+    color: #000000;
+}
+
+/* Neumorphic Calendar Design */
+#majlis-main-wrapper {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 4px;
+}
+
+#majlis-sidebar {
+    width: 90px;
+    min-width: 90px;
+    flex-shrink: 0;
+}
+
+#majlis-calendar-container {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-nav-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7887a0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.calendar-nav-btn:active {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    border-top: none;
+    padding-top: 5px;
+}
+
+.calendar-day-label {
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #8da0be;
+    padding: 4px 0;
+}
+
+.calendar-day {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    border-radius: 50%;
+    color: #475569;
+    background: transparent;
+    box-shadow: none;
+}
+
+.calendar-day:hover:not(.empty) {
+    box-shadow: none;
+    background: #f0fdf4;
+    color: #10b981;
+}
+
+.calendar-day.empty {
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+}
+
+.calendar-day.highlight {
+    background: #d1fae5;
+    box-shadow: none;
+    color: #059669 !important;
+    font-weight: 800;
+    border: none;
+}
+
+.calendar-day.today {
+    background: #ecfdf5;
+    border: 2px solid #10b981;
+    color: #059669;
+    font-weight: 800;
+}
+
+@keyframes datePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-10deg);
+        filter: blur(5px);
+    }
+
+    50% {
+        transform: scale(1.15) rotate(3deg);
+        filter: blur(0);
+        text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+        text-shadow: 2px 2px 4px var(--neu-dark);
+    }
+}
+
+.sidebar-date-large {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    animation: datePop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes calPop {
+    0% {
+        transform: scale(1);
+        color: var(--neu-accent);
+    }
+
+    50% {
+        transform: scale(1.25);
+        color: #10b981;
+    }
+
+    100% {
+        transform: scale(1.15);
+        color: #10b981;
+    }
+}
+
+.calendar-day.active-sidebar {
+    background: var(--neu-bg) !important;
+    color: #10b981 !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 14px !important;
+    animation: calPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    z-index: 25;
+}
+
+/* Cute Popup Style (Neumorphic) */
+#majlis-modal .bg-white {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    border: 1px solid #e5e7eb;
+}
+
+#majlis-modal .bg-emerald-600 {
+    background: #ffffff;
+    color: var(--neu-accent);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#majlis-modal h3 {
+    color: #1e293b;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+#majlis-modal .fa-times {
+    color: #3e4857;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+#majlis-modal .fa-times:hover {
+    color: #f43f5e;
+    transform: rotate(90deg);
+}
+
+.majlis-detail-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: none;
+}
+
+.majlis-detail-card i {
+    opacity: 1;
+}
+
+.majlis-detail-card p.text-\[10px\] {
+    color: #413e4f;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.majlis-detail-card .bg-emerald-600 {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    color: white !important;
+}
+
+.majlis-detail-card .bg-emerald-600:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(97, 253, 201, 0.829);
+}
+
+/* OK Button Styling for Cute look */
+#majlis-modal button.bg-slate-100 {
+    background: #f1f5f9;
+    color: #64748b !important;
+    border-radius: 16px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    padding: 0.8rem 2rem;
+}
+
+#majlis-modal button.bg-slate-100:hover {
+    background: #e2e8f0;
+    color: #1e293b !important;
+    transform: scale(1.05);
+}
+
+/* --- Social Icons Scroll Animations --- */
+.social-card,
+[class*="fly-in-"] {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.social-card.active,
+[class*="fly-in-"].active {
+    opacity: 1;
+    transform: translate(0, 0) !important;
+}
+
+.fly-in-left {
+    transform: translateX(-60px);
+}
+
+.fly-in-right {
+    transform: translateX(60px);
+}
+
+.fly-in-top {
+    transform: translateY(-60px);
+}
+
+.fly-in-bottom {
+    transform: translateY(60px);
+}
+
+/* --- Majlis Redesign Styles --- */
+#majlis-main-wrapper {
+    background: #ffffff;
+}
+
+#majlis-calendar-container {
+    padding: 0.5rem;
+}
+
+#majlis-sidebar {
+    min-width: 140px;
+}
+
+@media (min-width: 640px) {
+    #majlis-sidebar {
+        border-top: none;
+        width: 160px;
+    }
+}
+
+.sidebar-event-card {
+    background: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    text-align: center;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    animation: sidebarFadeIn 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.sidebar-event-card.fading-out {
+    animation: sidebarFadeOut 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+}
+
+.sidebar-event-card.fading-out {
+    animation: sidebarFadeOut 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards !important;
+}
+
+@keyframes sidebarFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sidebarFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.sidebar-date-holder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-date-circle {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+
+.sidebar-day-month {
+    font-size: 0.8rem;
+    color: #4b5563;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+.sidebar-day-name {
+    color: #ef4444;
+}
+
+.sidebar-date-large {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1;
+}
+
+#sidebar-events-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+.sidebar-event-entry {
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 4px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-event-entry .time {
+    color: #10b981;
+    font-weight: 700;
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+}
+
+.see-more-link {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 8px 24px;
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.see-more-link:hover {
+    color: #3b82f6;
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.see-more-link:active {
+    box-shadow: none;
+    transform: translateY(0) scale(0.98);
+}
