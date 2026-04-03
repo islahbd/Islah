@@ -234,23 +234,25 @@ async function fetchBayanSchedule() {
         const eventsByDay = {};
         if (data.items) {
             data.items.forEach(event => {
-                const start = new Date(event.start.dateTime || event.start.date);
-                const end = new Date(event.end.dateTime || event.end.date);
-
-                // Multi-day logic: iterate through each day from start to end
-                let current = new Date(start);
-                // Set to midnight local time for robust date comparison
-                current.setHours(0, 0, 0, 0);
-
-                while (current < end) {
-                    const dateKey = getLocalDateKey(current);
-                    if (!eventsByDay[dateKey]) {
-                        eventsByDay[dateKey] = [];
-                    }
+                if (event.start.dateTime) {
+                    // ---- Timed event: show only on the day it starts ----
+                    const start = new Date(event.start.dateTime);
+                    const dateKey = getLocalDateKey(start);
+                    if (!eventsByDay[dateKey]) eventsByDay[dateKey] = [];
                     eventsByDay[dateKey].push(event);
+                } else {
+                    // ---- All-day event: end.date is EXCLUSIVE per Google Calendar API ----
+                    // e.g., an event on Apr 3 has start.date="2026-04-03" & end.date="2026-04-04"
+                    // So we loop from start up to (but NOT including) end
+                    let current = new Date(event.start.date + 'T00:00:00');
+                    const endDay = new Date(event.end.date + 'T00:00:00');
 
-                    // Move to next day
-                    current.setDate(current.getDate() + 1);
+                    while (current < endDay) {
+                        const dateKey = getLocalDateKey(current);
+                        if (!eventsByDay[dateKey]) eventsByDay[dateKey] = [];
+                        eventsByDay[dateKey].push(event);
+                        current.setDate(current.getDate() + 1);
+                    }
                 }
             });
         }
