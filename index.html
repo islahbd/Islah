@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>শাহ তৈয়্যেব আশরাফ সাহেব</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
+</head>
+
+<body>
+    <div id="app-container">
+
+        <!-- ১. হেডার সেকশন -->
+        <header id="header" class="neu-header sticky top-0 z-50">
+            <div class="flex items-center gap-3">
+                <!-- লোগো -->
+                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                    <img src="logo.jpg" alt="লোগো" class="w-full h-full object-cover">
+                </div>
+                <!-- নাম ও পরিচয় -->
+                <div class="flex-1 flex flex-col justify-center min-w-0">
+                    <p class="text-[10px] sm:text-xs font-bold text-slate-500 mb-0.5 uppercase tracking-wider">শাইখুল
+                        হাদীস আরেফবিল্লাহ</p>
+                    <h1 class="text-[clamp(15px,4.6vw,22px)] font-black tracking-tighter sm:tracking-tight leading-none text-slate-800 whitespace-nowrap">
+                        হযরত মাওলানা শাহ্ তৈয়্যেব আশরাফ সাহেব
+                    </h1>
+                    <p class="text-[10px] sm:text-xs font-bold text-emerald-600 italic mt-0.5 text-right w-full pr-1">
+                        দামাত বারাকাতুহুম
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <section class="relative w-full overflow-hidden slider-container">
+            <div class="slider-track" id="slider-track">
+                <img src="ijtema.png" class="slide" alt="Ijtema">
+                <img src="monday.png" class="slide" alt="Monday Majlis">
+                <img src="romjan.jpeg" class="slide" alt="Romjan Majlis">
+            </div>
+            <!-- Slider Indicators (On image) -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
+                <div class="w-1.5 h-1.5 bg-white rounded-full opacity-100 indicator cursor-pointer shadow-sm border border-black/10"
+                    data-index="0" onclick="goToSlide(0)"></div>
+                <div class="w-1.5 h-1.5 bg-white rounded-full opacity-50 indicator cursor-pointer shadow-sm border border-black/10"
+                    data-index="1" onclick="goToSlide(1)"></div>
+                <div class="w-1.5 h-1.5 bg-white rounded-full opacity-50 indicator cursor-pointer shadow-sm border border-black/10"
+                    data-index="2" onclick="goToSlide(2)"></div>
+            </div>
+        </section>
+
+        <!-- ৩. নিউজ টিকার (Neumorphic Pill Design) -->
+        <section class="p-0">
+            <div class="ticker-pill-main flex items-center p-1.5 gap-1.5">
+                <!-- Inset Scrolling Area -->
+                <div class="ticker-track-inset flex-1 h-10 overflow-hidden relative flex items-center">
+                    <div class="ticker-scroll-content whitespace-nowrap px-4 text-sm font-bold text-slate-700">
+                        ✨ <b>🌙 হযরত ওয়ালার সাপ্তাহিক এসলাহী মজলিস ও মাসিক ইজতেমার সময়সূচী 🌙</b> হযরত মাওলানা শাহ
+                        তৈয়্যেব আশরাফ সাহেব (দামাত বারকাতুহুম) এর সাপ্তাহিক এসলাহী মজলিস প্রতি সোমবার আছর নামাজের পর
+                        থেকে মাগরিব পর্যন্ত নিয়মিত অনুষ্ঠিত হয়ে থাকে। প্রতিদিন বাদ যোহর কিতাবী তা'লিম অনুষ্ঠিত হয়।
+                        এছাড়াও, আগামী মাসের মাসিক ইজতেমা ইনশাআল্লাহ ১৬ এপ্রিল ২০২৬ তারিখে অনুষ্ঠিত হবে। | &#x1F4E1;
+                        <b>সরাসরি সম্প্রচার শুনতে
+                            টেলিগ্রামে যুক্ত থাকুন</b> | যোগাযোগ: মাওলানা আশেকে এলাহী +8801314803334
+                    </div>
+                </div>
+                <!-- Raised Action Button/Label -->
+                <div class="ticker-label-raised w-10 h-8 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-bullhorn text-white text-base"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ৪. বয়ান সূচী উইজেট -->
+        <section class="p-4 min-h-[160px] fly-in-bottom" id="schedule-section" style="background: var(--neu-bg);">
+            <div id="schedule-container" class="space-y-4">
+                <div class="text-center text-emerald-600 py-10">
+                    <i class="fas fa-spinner fa-spin text-2xl mb-2"></i><br>
+                    বয়ান সূচী লোড হচ্ছে...
+                </div>
+            </div>
+        </section>
+
+        <section id="links-section" class="p-6">
+            <div class="neu-section-title">
+                <div class="accent-bar"></div>
+                <h2>বয়ানের লিংক সমূহ</h2>
+                <span class="text-[9px] text-slate-400 font-bold uppercase ml-2">যুক্ত হতে ক্লিক করুন</span>
+            </div>
+            <div class="social-grid">
+                <a href="https://www.youtube.com/@islahbd" target="_blank" class="social-card fly-in-left hover-card">
+                    <div class="glow-light"></div>
+                    <div class="social-card-header">
+                        <div class="social-badge badge-yt">YouTube</div>
+                    </div>
+                    <div class="icon-circle icon-yt">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="social-footer">
+                        <span>Main Channel</span>
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/islahiboyanBD" target="_blank"
+                    class="social-card fly-in-right hover-card">
+                    <div class="glow-light"></div>
+                    <div class="social-card-header">
+                        <div class="social-badge badge-fb">Facebook</div>
+                    </div>
+                    <div class="icon-circle icon-fb">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-footer">
+                        <span>Official Page</span>
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                </a>
+                <a href="https://chat.whatsapp.com/EneCvgXzrNtFFuHGz4ENzj" target="_blank"
+                    class="social-card fly-in-top hover-card">
+                    <div class="glow-light"></div>
+                    <div class="social-card-header">
+                        <div class="social-badge badge-wa">WhatsApp</div>
+                    </div>
+                    <div class="icon-circle icon-wa">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-footer">
+                        <span>Join Group</span>
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                </a>
+                <a href="https://t.me/eslahiboyanbd" target="_blank" class="social-card fly-in-bottom hover-card">
+                    <div class="glow-light"></div>
+                    <div class="social-card-header">
+                        <div class="social-badge badge-tg">Telegram</div>
+                    </div>
+                    <div class="icon-circle icon-tg">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <div class="social-footer">
+                        <span>Community</span>
+                        <i class="fas fa-users"></i>
+                    </div>
+                </a>
+                <a href="https://eslahbd.com/" target="_blank" class="social-card fly-in-left hover-card">
+                    <div class="glow-light"></div>
+                    <div class="social-card-header">
+                        <div class="social-badge badge-web">Website</div>
+                    </div>
+                    <div class="icon-circle icon-web">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="social-footer">
+                        <span>Browse Site</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </a>
+                <a href="https://g.co/kgs/BXQoMGt" target="_blank" class="social-card fly-in-right hover-card">
+                    <div class="glow-light"></div>
+                    <div class="social-card-header">
+                        <div class="social-badge badge-loc">Location</div>
+                    </div>
+                    <div class="icon-circle icon-loc">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="social-footer">
+                        <span>Find Us</span>
+                        <i class="fas fa-directions"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ৬. নিয়মিত এসলাহি মজলিস -->
+        <section id="majlis-section" class="px-3 pb-8 mb-12 fly-in-bottom">
+            <div class="neu-section-title">
+                <div class="accent-bar"></div>
+                <h2>নিয়মিত এসলাহি মজলিস</h2>
+                <span class="text-[9px] text-slate-400 font-bold uppercase ml-2">ক্যালেন্ডারে ক্লিক করুন</span>
+            </div>
+            <div id="majlis-main-wrapper" class="overflow-hidden">
+                <!-- Majlis Sidebar for Event Rotation (Now on Left) -->
+                <div id="majlis-sidebar" class="relative flex flex-col items-stretch">
+                    <div id="sidebar-event-content" class="w-full flex-1 flex flex-col">
+                        <!-- Sidebar events will be dynamically rendered here -->
+                    </div>
+                </div>
+                <!-- Calendar (Now on Right) -->
+                <div id="majlis-calendar-container" class="flex-1 p-3">
+                    <div class="text-center py-4 text-emerald-600">ক্যালেন্ডার লোড হচ্ছে...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Majlis Detail Popup Modal -->
+        <div id="majlis-modal" class="fixed inset-0 bg-black/60 z-[70] hidden items-center justify-center p-4">
+            <div class="bg-white rounded-xl w-full max-w-sm overflow-hidden relative animate-scaleUp">
+                <div class="bg-emerald-600 p-4 text-white text-center">
+                    <h3 id="majlis-modal-title" class="font-bold text-lg">মজলিস বিস্তারিত</h3>
+                    <button onclick="closeMajlisModal()" class="absolute top-4 right-4 text-white/80 hover:text-white">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div id="majlis-modal-body" class="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
+                    <!-- Dynamic Content -->
+                </div>
+                <div class="p-4 border-t bg-gray-50 flex justify-center">
+                    <button onclick="closeMajlisModal()"
+                        class="px-8 py-2 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition">ঠিক
+                        আছে</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৭. ফুটার মেনু -->
+        <nav class="fixed bottom-0 left-0 right-0 neu-footer z-40">
+            <div class="max-w-md mx-auto flex justify-around items-center py-1.5">
+                <button onclick="scrollToSection('header', event)"
+                    class="nav-item active flex flex-col items-center p-2 text-gray-500 transition duration-300 w-1/5">
+                    <i class="fas fa-home text-lg"></i>
+                    <span class="text-[10px] mt-1">হোম</span>
+                </button>
+                <button onclick="scrollToSection('schedule-container', event)"
+                    class="nav-item flex flex-col items-center p-2 text-gray-500 transition duration-300 w-1/5">
+                    <i class="fas fa-calendar-alt text-lg"></i>
+                    <span class="text-[10px] mt-1">বয়ান সূচী</span>
+                </button>
+                <button onclick="openModal()"
+                    class="nav-item flex flex-col items-center p-2 text-gray-500 transition duration-300 w-1/5">
+                    <i class="fas fa-user text-lg"></i>
+                    <span class="text-[10px] mt-1">হযরতের পরিচিতি</span>
+                </button>
+                <button onclick="scrollToSection('majlis-section', event)"
+                    class="nav-item flex flex-col items-center p-2 text-gray-500 transition duration-300 w-1/5">
+                    <i class="fas fa-mosque text-lg"></i>
+                    <span class="text-[10px] mt-1">নিয়মিত মজলিস</span>
+                </button>
+                <button onclick="scrollToSection('links-section', event)"
+                    class="nav-item flex flex-col items-center p-2 text-gray-500 transition duration-300 w-1/5">
+                    <i class="fas fa-share-alt text-lg"></i>
+                    <span class="text-[10px] mt-1">বয়ানের লিংক</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Modal -->
+        <div id="intro-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden items-center justify-center p-4">
+            <div class="bg-white rounded-lg w-full max-w-sm p-6 relative">
+                <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-500">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="text-center mb-4">
+                    <div
+                        class="w-20 h-20 bg-emerald-100 rounded-full mx-auto flex items-center justify-center mb-3 border-2 border-emerald-600 overflow-hidden">
+                        <img src="https://i.ibb.co/F4wy1HnX/app-logo-original1.jpg" alt="Logo"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-slate-500">শাইখুল হাদীস আরেফবিল্লাহ হযরত মাওলানা</p>
+                    <h3 class="text-xl font-bold text-emerald-900">শাহ তৈয়্যেব আশরাফ সাহেব</h3>
+                    <p class="text-sm text-slate-500">দামাত বারাকাতুহুম</p>
+                </div>
+                <div
+                    class="text-sm text-gray-700 leading-relaxed text-left h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+
+                    <p class="mb-4">তিনি হযরত থানভী রহ. এর সিলসিলার মস্ত বড়ো বুজুর্গ আরেফ বিল্লাহ হযরত মাওলানা শাহ
+                        আব্দুল মতীন বিন হুসাইন সাহেব পীর সাহেব, ঢালকানগর এর একান্ত আস্থাভাজন ও বিশিষ্ট খলীফা, ও মাদরাসা
+                        মারকাযুল ইহসান ঢাকা এর স্বনামধন্য প্রতিষ্ঠাতা প্রিন্সিপাল এবং বাইতুল আমান স্টিমারঘাট জামে মসজিদ,
+                        বাদামতলী ঢাকা এর সম্মানিত খতীব। তিনি সর্বজন শ্রদ্ধেয় ও উঁচু স্তরের একজন আলেম ও আধ্যাত্মিক
+                        রাহবার।</p>
+
+                    <p class="font-bold text-emerald-800 mb-2">বংশ পরিচয়:</p>
+                    <p class="mb-4">মাওলানা শাহ্ তৈয়্যেব আশরাফ সাহেব চাঁদপুর জেলার অন্তর্গত কচুয়া থানার একটি অত্যন্ত
+                        সম্ভ্রান্ত ও শিক্ষিত পরিবারে জন্মগ্রহণ করেন। তাঁর সম্মানিত পিতার নাম হাফেয মুহাম্মদ কুতুবউদ্দিন
+                        সাহেব। যিনি অনেক বড় একজন হাফেয এবং হাজারো হাফেয-আলেমদের উস্তাদ।</p>
+
+                    <p class="font-bold text-emerald-800 mb-2">শিক্ষা জীবন:</p>
+                    <p class="mb-4">যুগশ্রেষ্ঠ এবং আন্তর্জাতিক পর্যায়ে বহির্বিশ্বে স্বীকৃতিপ্রাপ্ত হাফেয ক্বারী আব্দুল
+                        হক সাহেব এর মাদরাসা থেকে হিফয সম্পন্ন করেন। অতঃপর বাংলাদেশের ঐতিহ্যবাহী দ্বীনি শিক্ষাপ্রতিষ্ঠান
+                        'মাদরাসা বাইতুল উলূম ঢালকানগর' ঢাকা থেকে ২০০২ সালে দাওরা হাদিস তথা মাস্টার্স সমমান পর্যন্ত
+                        দ্বীনি শিক্ষা অর্জন সমাপ্ত করেন।</p>
+
+                    <p class="font-bold text-emerald-800 mb-2">কর্ম জীবন:</p>
+                    <p class="mb-4">তাঁর প্রখর মেধা-যোগ্যতা এবং অত্যন্ত খোদাভীরুতার প্রতি আকৃষ্ট হয়ে মাদরাসা বাইতুল
+                        উলূম ঢালকানগর ঢাকার উস্তাদগণ তাকে অত্র মাদ্রাসার শিক্ষক হিসেবে নিয়োগ প্রদান করেন এবং দীর্ঘ ৪
+                        বছর অত্যন্ত সম্মান ও মর্যাদার সাথে তিনি সেখানে দ্বীনি শিক্ষা প্রদান করেন।</p>
+                    <p class="mb-4">২০০৬/৭ সালে তিনি 'মাদরাসা মারকাযুন নূর' নামে ঢালকানগর, গেন্ডারিয়া, ঢাকাতে একটি
+                        দ্বীনি শিক্ষা প্রতিষ্ঠান প্রতিষ্ঠা করেন। সেখানে শিশু শ্রেণী থেকে দাওরা হাদিস তথা মাস্টার্স সমমান
+                        পর্যন্ত সকল বিভাগের কার্যক্রম চলমান ছিলো।</p>
+
+                    <p class="font-bold text-emerald-800 mb-2">বর্তমান অবস্থান:</p>
+                    <p class="mb-4">বর্তমানে তিনি ২০১৮ সালে প্রতিষ্ঠিত দ্বীনী শিক্ষা প্রতিষ্ঠান মাদরাসা মারকাযুল ইহসান
+                        ঢাকা এর স্বনামধন্য প্রতিষ্ঠাতা প্রিন্সিপাল ও মোতাওয়াল্লী হিসেবে দায়িত্বরত আছেন। তাঁর
+                        ন্যায়-নিষ্ঠা, সুদক্ষ ও গতিশীল পরিচালনা ব্যবস্থা এবং অক্লান্ত প্রচেষ্টার ফলে মাত্র ৫ বছরের
+                        মধ্যেই মদ্রাসাটি শিশু শ্রেণী থেকে দাওরা হাদিস তথা মাস্টার্স সমমান পর্যন্ত সকল বিভাগে অভাবনীয়
+                        সাফল্যের সঙ্গে শিক্ষা কার্যক্রম অব্যাহত রেখে এক বিরল ইতিহাসের সূচনা করেছে।</p>
+                    <p class="mb-4">এছাড়াও তিনি দীর্ঘদিন ধরে বাইতুল আমান স্টিমারঘাট জামে মসজিদ, বাদামতলী, ঢাকায় খতীব
+                        হিসেবে দায়িত্বরত আছেন। পাশাপাশি ইসলামের প্রচার-প্রসার ও জনসাধারণের দ্বীন-ইমান সংরক্ষণের লক্ষ্যে
+                        তিনি সারাবছর দেশের বিভিন্ন অঞ্চলে ছুটে যান এবং বিভিন্ন দ্বীনি মাহফিলে গুরুত্বপূর্ণ বক্তৃতা
+                        রাখেন।</p>
+                </div>
+                <button onclick="closeModal()"
+                    class="mt-5 w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">
+                    বন্ধ করুন
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js?v=1.2"></script>
+</body>
+
+</html>
