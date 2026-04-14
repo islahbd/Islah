@@ -10,6 +10,7 @@ body {
     background-color: var(--neu-bg);
     padding-bottom: 80px;
     font-family: 'SolaimanLipi', 'Hind Siliguri', sans-serif !important;
+    font-weight: 400;
 }
 
 .bg-custom-mint {
@@ -186,7 +187,7 @@ body {
 
 .neu-section-title h2 {
     font-size: 1.05rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #1e293b;
     margin: 0;
 }
@@ -256,7 +257,7 @@ body {
 .glow-pill .pill-text {
     color: #1e293b;
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.8px;
 }
 
@@ -291,7 +292,7 @@ body {
 .bayan-day-month {
     font-size: 0.75rem;
     color: #64748b;
-    font-weight: 700;
+    font-weight: 600;
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -309,7 +310,7 @@ body {
 
 .bayan-date-num {
     font-size: 1.4rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1;
     color: #1e293b;
 }
@@ -362,16 +363,17 @@ body {
     padding: 2px 12px;
     border-radius: 0;
     box-shadow: none;
-    margin-right: 45px;
+    margin-right: 25px;
     border: none;
 }
 
 .bayan-location {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1rem;
     color: #1e293b;
     line-height: 1.2;
     margin-bottom: 4px;
+    display: block;
 }
 
 .bayan-details {
@@ -384,7 +386,24 @@ body {
 
 .bayan-details .label {
     color: #64748b;
-    font-weight: 700;
+    font-weight: 600;
+}
+
+.bayan-events-wrapper {
+    flex: 1;
+    max-height: 110px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    overscroll-behavior-y: auto;
+    touch-action: pan-y;
+}
+
+.bayan-events-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 /* --- Social Media Section --- */
@@ -450,12 +469,12 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 .social-label {
     font-size: 0.95rem;
     color: #1e293b;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .social-badge {
     font-size: 0.75rem;
-    font-weight: 800;
+    font-weight: 700;
     padding: 3px 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -529,7 +548,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
     margin-top: 15px;
     font-size: 0.7rem;
     color: #94a3b8;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .social-footer i {
@@ -547,7 +566,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 .title-button .button-content {
     color: #059669;
     font-size: 1.2rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
 }
@@ -576,7 +595,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 }
 
 .calendar-header-month {
-    font-weight: 900;
+    font-weight: 700;
     color: #000000;
     font-size: 0.95rem;
     text-transform: uppercase;
@@ -591,7 +610,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 
 .calendar-header-year {
     color: #ef4444;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.2rem;
     line-height: 1;
 }
@@ -675,7 +694,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 .calendar-day-label {
     text-align: center;
     font-size: 0.65rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #8da0be;
     padding: 4px 0;
 }
@@ -712,7 +731,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
     background: #d1fae5;
     box-shadow: none;
     color: #059669 !important;
-    font-weight: 800;
+    font-weight: 700;
     border: none;
 }
 
@@ -720,7 +739,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
     background: #ecfdf5;
     border: 2px solid #10b981;
     color: #059669;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 @keyframes datePop {
@@ -745,7 +764,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 
 .sidebar-date-large {
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 700;
     color: #10b981;
     line-height: 0.9;
     letter-spacing: -1px;
@@ -796,7 +815,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 #majlis-modal h3 {
     color: #1e293b;
     font-size: 1.15rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 #majlis-modal .fa-times {
@@ -824,7 +843,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 
 .majlis-detail-card p.text-\[10px\] {
     color: #413e4f;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.025em;
 }
@@ -848,7 +867,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
     background: #f1f5f9;
     color: #64748b !important;
     border-radius: 16px;
-    font-weight: 800;
+    font-weight: 700;
     transition: all 0.3s ease;
     padding: 0.8rem 2rem;
 }
@@ -974,7 +993,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 .sidebar-day-month {
     font-size: 0.8rem;
     color: #4b5563;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     display: flex;
     flex-direction: row;
