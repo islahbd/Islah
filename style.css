@@ -481,7 +481,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
     color: #8b5cf6;
 }
 
-.badge-loc {
+.badge-contact {
     color: #f59e0b;
 }
 
@@ -558,7 +558,7 @@ a.social-card:nth-child(6) { background: #fff7ed; border-color: #fed7aa; }
 .icon-wa  { color: #16a34a; background: rgba(255,255,255,0.6); }
 .icon-tg  { color: #0284c7; background: rgba(255,255,255,0.6); }
 .icon-web { color: #7c3aed; background: rgba(255,255,255,0.6); }
-.icon-loc { background: rgba(255,255,255,0.6); color: #ea580c; }
+.icon-contact { background: rgba(255,255,255,0.6); color: #ea580c; }
 
 /* Majlis Calendar Minimalist Styles */
 #majlis-calendar-container {
