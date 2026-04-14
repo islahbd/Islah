@@ -336,12 +336,12 @@ function renderBayanWidget() {
     if (!container || bayanEventsData.length === 0) return;
 
     // Build a horizontal scroll-snap wrapper with all 3 day cards
-    let wrapperHtml = '<div id="bayan-swipe-wrapper" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:0;scrollbar-width:none;" onscroll="onBayanScroll(this)">';
+    let wrapperHtml = '<div id="bayan-swipe-wrapper" onscroll="onBayanScroll(this)">';
 
     bayanEventsData.forEach((data, idx) => {
         const opacityClass = data.hasEvent ? '' : 'opacity-70';
 
-        wrapperHtml += `<div class="bayan-card hover-card ${opacityClass}" style="min-width:100%;scroll-snap-align:start;box-sizing:border-box;">`;
+        wrapperHtml += `<div class="bayan-card hover-card ${opacityClass}">`;
 
         // Header
         wrapperHtml += `<div class="bayan-header"><div class="glow-pill"><span class="pill-text">${data.label}</span><i class="fas fa-calendar-check pill-icon"></i></div></div>`;
