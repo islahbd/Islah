@@ -209,6 +209,10 @@ body {
     border: 1px solid #d1fae5;
     margin-bottom: 16px;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
 }
 
 .bayan-card:nth-child(2n) {
@@ -404,6 +408,21 @@ body {
 
 .bayan-events-wrapper::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
+}
+
+#bayan-swipe-wrapper {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+#bayan-swipe-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 /* --- Social Media Section --- */
