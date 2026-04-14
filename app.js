@@ -351,18 +351,18 @@ function renderBayanWidget() {
         wrapperHtml += `<div class="bayan-date-box"><div class="bayan-day-month"><span class="bayan-day-name">${data.dateInfo.dayName}</span> ${data.dateInfo.month}</div><div class="bayan-date-num">${data.dateInfo.date}</div></div>`;
 
         // Events wrapper with max-height scroll
-        wrapperHtml += '<div class="bayan-events-wrapper" style="flex:1;max-height:110px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;scrollbar-width:none;">';
+        wrapperHtml += '<div class="bayan-events-wrapper">';
 
         if (data.hasEvent) {
             data.events.forEach(event => {
                 const hasMultiple = data.events.length > 1;
-                const symbol = hasMultiple ? '<i class="fas fa-circle text-[6px] mr-2 text-emerald-600 align-middle"></i>' : '';
+                const symbol = hasMultiple ? '<i class="fas fa-circle text-[6px] mr-2 text-emerald-600"></i>' : '';
                 const indentClass = hasMultiple ? 'pl-4' : '';
-                wrapperHtml += `<div class="bayan-info-box"><div class="bayan-location flex items-baseline">${symbol}<span>${event.location}</span></div><div class="bayan-details ${indentClass}"><div><span class="label">সময়:</span> ${event.time}</div><div><span class="label">যোগাযোগ:</span> ${event.contact}</div></div></div>`;
+                wrapperHtml += `<div class="bayan-info-box"><div class="bayan-location">${symbol}${event.location}</div><div class="bayan-details ${indentClass}"><div><span class="label">সময়:</span> ${event.time}</div><div><span class="label">যোগাযোগ:</span> ${event.contact}</div></div></div>`;
             });
         } else {
             const msg = data.label.includes('আজ') ? 'আজ কোনো মজলিস নেই' : (data.label.includes('আগামীকাল') ? 'আগামীকাল কোনো মজলিস নেই' : 'পরশুদিন কোনো মজলিস নেই');
-            wrapperHtml += `<div class="bayan-info-box flex items-center py-3"><div class="text-base font-bold text-gray-800">${msg}</div></div>`;
+            wrapperHtml += `<div class="bayan-info-box flex items-center py-3"><div class="text-base font-medium text-gray-800">${msg}</div></div>`;
         }
 
         wrapperHtml += '</div>'; // end events-wrapper
@@ -734,7 +734,7 @@ function showMajlisDetails(events, day, monthName) {
     let bodyHTML = '';
     events.forEach(event => {
         bodyHTML += `<div class="mb-5 last:mb-0">
-            <h4 class="font-bold text-slate-800 text-base mb-3 border-b border-slate-100 pb-2">${event.title}</h4>
+            <h4 class="font-medium text-slate-800 text-base mb-3 border-b border-slate-100 pb-2">${event.title}</h4>
         `;
 
         event.details.forEach(detail => {
@@ -742,21 +742,21 @@ function showMajlisDetails(events, day, monthName) {
                 <div class="majlis-detail-card space-y-3 mb-4">
                     <div class="flex gap-4 items-center">
                         <i class="far fa-clock text-emerald-500 w-5"></i>
-                        <div><p class="text-[10px] uppercase font-bold">সময়</p><p class="text-sm font-bold text-slate-700">${detail.time}</p></div>
+                        <div><p class="text-[10px] uppercase font-medium">সময়</p><p class="text-sm font-medium text-slate-700">${detail.time}</p></div>
                     </div>
                     <div class="flex gap-4 items-center">
                         <i class="fas fa-map-marker-alt text-blue-500 w-5"></i>
-                        <div><p class="text-[10px] uppercase font-bold">স্থান</p><p class="text-sm font-bold text-slate-700">${detail.location}</p></div>
+                        <div><p class="text-[10px] uppercase font-medium">স্থান</p><p class="text-sm font-medium text-slate-700">${detail.location}</p></div>
                     </div>
                     <div class="flex gap-4 items-center">
                         <i class="fas fa-route text-amber-500 w-5"></i>
-                        <div><p class="text-[10px] uppercase font-bold">যাতায়াত</p><p class="text-xs text-slate-500 leading-tight">${detail.route}</p></div>
+                        <div><p class="text-[10px] uppercase font-medium">যাতায়াত</p><p class="text-xs text-slate-500 leading-tight">${detail.route}</p></div>
                     </div>
                     <div class="flex gap-4 items-center">
                         <i class="fas fa-phone-alt text-purple-500 w-5"></i>
-                        <div><p class="text-[10px] uppercase font-bold">যোগাযোগ</p><p class="text-sm font-bold text-slate-700">${detail.contact}</p></div>
+                        <div><p class="text-[10px] uppercase font-medium">যোগাযোগ</p><p class="text-sm font-medium text-slate-700">${detail.contact}</p></div>
                     </div>
-                    <a href="${detail.map}" target="_blank" class="flex items-center justify-center gap-2 w-full py-2 bg-emerald-600 text-white rounded-xl font-bold hover:opacity-90 transition mt-2 text-sm italic">
+                    <a href="${detail.map}" target="_blank" class="flex items-center justify-center gap-2 w-full py-2 bg-emerald-600 text-white rounded-xl font-medium hover:opacity-90 transition mt-2 text-sm italic">
                         <i class="fas fa-location-arrow"></i> Google Maps
                     </a>
                 </div>
